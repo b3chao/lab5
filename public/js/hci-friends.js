@@ -8,8 +8,19 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
+function initializePage(e) {
 	console.log("Javascript connected!");
+
+	$(".friend").click(friendClick);
+}
+
+//$("h3",this).text()
+
+function friendClick(e) {
+	e.preventDefault();
+
+	var aName = anagrammedName($("h3",this).text());
+    $("h3",this).text(aName);
 }
 
 function anagrammedName(name) {

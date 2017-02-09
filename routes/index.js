@@ -2,6 +2,11 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-	console.log(data);
-	res.render('index');
+
+	var friends = data['friends'];
+
+	res.render('index', {
+		'friends' :  friends
+	}
+	);
 };
